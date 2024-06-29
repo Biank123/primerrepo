@@ -1,0 +1,58 @@
+.post {
+    display: flex;
+    flex-direction: column; /* apila posts verticalmente */
+    align-items: center; /* centra elementos horizontalmente */
+    border: 1px solid #ccc;
+    width: 450px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin: 0 auto; /* centra el post horizontalmente */
+    margin-top: 30px;
+}
+.post-img {
+    display: flex;
+    margin: -5px;
+}
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-left: 5px; /* espacio a la izquierda del encabezado */
+}
+
+.post-header h3 {
+    margin-left: 5px; /* espacio entre el ícono y el nombre de usuario */
+    font-size: 16px; /* tamaño del nombre de usuario */
+}
+
+.post-icons {
+    display: flex;
+    align-items: center;
+    margin-top: 5px; /* espacio entre los íconos y el cuerpo del post */
+    margin-left: -7px;
+}
+
+.post-icons i {
+    margin-right: 10px; /* espacio entre los íconos */
+    margin-left: 10px;
+    cursor: pointer; /* cambia el cursor al pasar sobre los íconos */
+    color: #595454; /* color de los íconos */
+}
+.guardado {
+    margin-left: 415px;
+    margin-top: -17px;
+    margin-bottom: 10px;
+}
+.likes {
+    text-align: left; /* alínea el texto a la izquierda */
+    margin-left: -1px;
+    margin-bottom: 29px;
+}
+.parrafo {
+    margin-top: -15px;
+    margin-right: 20px;
+}
+.lugar {
+    margin-left: 25px;
+    margin-top: -29px;
+}
