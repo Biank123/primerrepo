@@ -1,0 +1,39 @@
+/* El margen de todo el body cubre la pantalla, no tiene margen */
+body{
+    display: flex;
+    margin: 0; 
+}
+/* El color de fondo del menu, ancho, sombra, alto */
+menu {
+    background-color: black;
+    box-shadow: 5px 5px 5px rgb(171, 169, 169);
+    min-height: 100vh;
+    margin: 0;
+    width: 100px;
+}
+/* La cercanía a la izquierda */
+menu ul{
+    padding: 0;
+}
+/* La separación entre letras */
+menu li{
+    padding: 10px;
+}
+/* El color de las letras, y sin línea inferior */
+menu a {
+    text-decoration: none;
+    color: rgb(181, 175, 175);
+}
+/* Cuando pase el mouse, que cambie de color */
+menu a:hover {
+    color: rgb(196, 112, 86);
+} 
+/* Corrije que el contenido se vea en la sección blanca y no abajo del menú */
+.main{
+    display: flex;
+}
+/* Mueve el texto */
+.section{
+    margin: 10px;
+    margin-left: 20px;
+}
