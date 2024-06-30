@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Piedra, Papel o Tijera</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #454242;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #resultado {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e84ad3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Juego de Piedra, Papel o Tijera</h1>
+        <div id="instrucciones">
+            <p>Selecciona tu opción:</p>
+            <button onclick="jugar('piedra')">Piedra</button>
+            <button onclick="jugar('papel')">Papel</button>
+            <button onclick="jugar('tijera')">Tijera</button>
+        </div>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function jugar(eleccion_usuario) {
+            const opciones = ['piedra', 'papel', 'tijera'];
+            const eleccion_pc = opciones[Math.floor(Math.random() * opciones.length)];
+
+            let resultado;
+            if (eleccion_usuario === eleccion_pc) {
+                resultado = "Empate";
+            } else if ((eleccion_usuario === 'piedra' && eleccion_pc === 'tijera') ||
+                       (eleccion_usuario === 'papel' && eleccion_pc === 'piedra') ||
+                       (eleccion_usuario === 'tijera' && eleccion_pc === 'papel')) {
+                resultado = "¡Ganaste!";
+            } else {
+                resultado = "Perdiste.";
+            }
+
+            document.getElementById('resultado').innerHTML = `
+                <p>Tú elegiste: ${eleccion_usuario}</p>
+                <p>La computadora eligió: ${eleccion_pc}</p>
+                <p>Resultado: ${resultado}</p>
+                <button onclick="reiniciar()">Jugar de nuevo</button>
+            `;
+        }
+
+        function reiniciar() {
+            document.getElementById('resultado').innerHTML = '';
+            document.getElementById('instrucciones').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
