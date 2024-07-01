@@ -2,11 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url(https://wallpapers.com/images/hd/colorful-space-900-x-1600-wallpaper-nj76xywvv394b7hm.jpg);
+    background-size: cover;
 }
 
 .main {
-    background: #333;
-    color: white;
+    background: #060606;
     padding: 10px 0;
 }
 
@@ -27,27 +28,29 @@ body {
 }
 
 .menu ul li a:hover {
-    background: #555;
+    background: #7f22a8;
 }
 
 .section {
     padding: 20px;
     text-align: center;
+    color: rgb(217, 217, 225);
 }
 
 section {
     padding: 100px;
     margin: 50px 0;
+    color: rgb(169, 169, 178);
 }
 
 #section1 {
-    background: #f4f4f4;
+    background: #040404;
 }
 
 #section2 {
-    background: #e4e4e4;
+    background: #040404;
 }
 
 #section3 {
-    background: #d4d4d4;
+    background: #040404;
 }
