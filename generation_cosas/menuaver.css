@@ -1,39 +1,53 @@
-/* El margen de todo el body cubre la pantalla, no tiene margen */
-body{
-    display: flex;
-    margin: 0; 
-}
-/* El color de fondo del menu, ancho, sombra, alto */
-menu {
-    background-color: black;
-    box-shadow: 5px 5px 5px rgb(171, 169, 169);
-    min-height: 100vh;
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
-    width: 100px;
-}
-/* La cercanía a la izquierda */
-menu ul{
     padding: 0;
 }
-/* La separación entre letras */
-menu li{
-    padding: 10px;
+
+.main {
+    background: #333;
+    color: white;
+    padding: 10px 0;
 }
-/* El color de las letras, y sin línea inferior */
-menu a {
-    text-decoration: none;
-    color: rgb(181, 175, 175);
-}
-/* Cuando pase el mouse, que cambie de color */
-menu a:hover {
-    color: rgb(196, 112, 86);
-} 
-/* Corrije que el contenido se vea en la sección blanca y no abajo del menú */
-.main{
+
+.menu ul {
+    list-style: none;
     display: flex;
+    justify-content: center;
 }
-/* Mueve el texto */
-.section{
-    margin: 10px;
-    margin-left: 20px;
+
+.menu ul li {
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.menu ul li a:hover {
+    background: #555;
+}
+
+.section {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    padding: 100px;
+    margin: 50px 0;
+}
+
+#section1 {
+    background: #f4f4f4;
+}
+
+#section2 {
+    background: #e4e4e4;
+}
+
+#section3 {
+    background: #d4d4d4;
 }
