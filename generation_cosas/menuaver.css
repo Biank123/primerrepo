@@ -2,12 +2,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url(https://wallpapers.com/images/hd/colorful-space-900-x-1600-wallpaper-nj76xywvv394b7hm.jpg);
-    background-size: cover;
+    background: linear-gradient(145deg, rgb(0, 0, 0), rgb(97, 33, 117));
 }
 
 .main {
-    background: #060606;
+    background: #450f4b;
     padding: 10px 0;
 }
 
@@ -18,7 +17,8 @@ body {
 }
 
 .menu ul li {
-    margin: 0 15px;
+    margin: 0 25px;
+    
 }
 
 .menu ul li a {
@@ -42,6 +42,11 @@ section {
     margin: 50px 0;
     color: rgb(169, 169, 178);
 }
+.section img{
+    border-radius: 50%;
+    margin-bottom: 40px;
+    margin-top: 5px;
+}
 
 #section1 {
     background: #040404;
@@ -56,4 +61,16 @@ section {
 }
 #section0{
     background: black;
+}
+
+.linkedin{
+    margin-left: 500px;
+    margin-top: -100px;
+}
+.github{
+    margin-right: 600px;
+    margin-top: -39px;
+}
+.section a {
+    color: rgb(169, 169, 178); 
 }
