@@ -1,0 +1,14 @@
+/* Aplica estilos al contenedor principal del tablero de juego donde 
+estarán las casillas con las imágenes de los dinosaurios. */
+
+/* Estiliza cada casilla del juego para que tenga un aspecto atractivo 
+y sea fácilmente distinguible. Puedes utilizar bordes, sombras y transiciones para resaltarlas cuando se seleccionen. */
+
+/* Estiliza los botones que puedas tener para iniciar el juego, reiniciar o cualquier otra acción. */
+
+/* Define estilos para la sección donde se mostrarán los resultados de cada ronda y el resultado final del juego */
+
+/* Considera hacer tu diseño responsive para que se vea bien en diferentes tamaños de pantalla. Utiliza media queries 
+para ajustar los estilos según el tamaño de la pantalla del dispositivo. */
+
+/* display grid, grid-template-columns, @media */

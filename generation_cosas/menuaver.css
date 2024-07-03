@@ -1,12 +1,18 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    background-image: url("https://images.hdqwalls.com/download/cgi-rendeer-purple-4k-8r-1366x768.jpg");
+    background-size: 100%;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(145deg, rgb(0, 0, 0), rgb(97, 33, 117));
+
 }
 
 .main {
-    background: #450f4b;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5bfc3e884cde7a5d18b39ad9/1644624947911-13DCD8KG0CVPW1ZVAH9G/63243aacfe563f25e472f9e187723df1.gif?format=2500w");
     padding: 10px 0;
 }
 
@@ -18,7 +24,6 @@ body {
 
 .menu ul li {
     margin: 0 25px;
-    
 }
 
 .menu ul li a {
@@ -28,13 +33,26 @@ body {
 }
 
 .menu ul li a:hover {
-    background: #7f22a8;
+    background: #560b5a;
 }
 
 .section {
-    padding: 20px;
-    text-align: center;
     color: rgb(217, 217, 225);
+    padding: 20px;
+    text-align: left;
+    margin: 50px;
+    margin-top: 200px;
+    margin-left: 150px;
+}
+
+.letra-grande {
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #912185, #fad0c4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 section {
@@ -42,35 +60,91 @@ section {
     margin: 50px 0;
     color: rgb(169, 169, 178);
 }
-.section img{
+
+.section img {
     border-radius: 50%;
     margin-bottom: 40px;
-    margin-top: 5px;
+    margin-top: -200px;
+    margin-left: 700px;
 }
 
 #section1 {
-    background: #040404;
+    background: linear-gradient(145deg, rgb(0, 0, 0), rgb(74, 19, 93));
 }
 
 #section2 {
-    background: #040404;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5bfc3e884cde7a5d18b39ad9/1644624947911-13DCD8KG0CVPW1ZVAH9G/63243aacfe563f25e472f9e187723df1.gif?format=2500w");
+    background-size: cover;
 }
 
 #section3 {
-    background: #040404;
-}
-#section0{
-    background: black;
+    background: linear-gradient(145deg, rgb(0, 0, 0), rgb(74, 19, 93));
 }
 
-.linkedin{
-    margin-left: 500px;
-    margin-top: -100px;
+#section0 {
+    background: linear-gradient(145deg, rgb(0, 0, 0), rgb(21, 3, 27));
+    
 }
-.github{
-    margin-right: 600px;
-    margin-top: -39px;
+#section0 .contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
 }
+
+#section0 i {
+    margin-right: 10px; 
+}
+
+#section0 p {
+    margin: 5px; 
+}
+#section4 {
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5bfc3e884cde7a5d18b39ad9/1644624947911-13DCD8KG0CVPW1ZVAH9G/63243aacfe563f25e472f9e187723df1.gif?format=2500w");
+    background-size: cover;
+}
+#section5 {
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5bfc3e884cde7a5d18b39ad9/1644624947911-13DCD8KG0CVPW1ZVAH9G/63243aacfe563f25e472f9e187723df1.gif?format=2500w");
+    background-size: cover;
+}
+
+.linkedin,
+.github {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.linkedin a,
+.github a {
+    color: rgba(255, 255, 255, 0.637);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.linkedin i,
+.github i {
+    margin-right: 8px;
+    color: antiquewhite;
+}
+
 .section a {
-    color: rgb(169, 169, 178); 
+    color: rgb(169, 169, 178);
+    list-style: none;
+}
+
+.github {
+    margin-top: -63px;
+    margin-left: 250px;
+}
+.linkedin {
+    margin-top: -30px;
+}
+
+.bootcamp {
+    margin-top: 50px;
+}
+
+.idiomas {
+    margin-top: 50px;
 }
