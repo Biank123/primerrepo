@@ -12,9 +12,8 @@ export class TaskManager {
 
     // Método listTasks que imprime en la consola los detalles de todas las tareas almacenadas
     listTasks() {
-        // Iteración sobre el array tareas para llamar al método displayTask de cada tarea y mostrar las descripciones
         this.tareas.forEach(tarea => {
-            console.log(`Tarea: ${tarea.description}, Completada: ${tarea.completed}`);
+            tarea.displayTask();  // Llamada al método displayTask en cada instancia de Task
         });
     }
 
