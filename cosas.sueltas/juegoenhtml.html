@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="juegoencss.css"></link>
 </head>
 <body>
-    <div class="resultado">
-    </div>
+    <div id="game-container">
+        <h1>¡Juguemos Piedra, Papel o Tijera!</h1>
+        <div id="resultados">
+            <!-- Resultados del juego se mostrarán aquí -->
+        </div>
+        <div id="elecciones">
+            <button onclick="jugar('piedra')">
+                <img src="https://images.vexels.com/content/145874/preview/stone-boulder-2f1c5f.png" alt="Piedra" width="100">
+                Piedra
+            </button>
+            <button onclick="jugar('papel')">
+                <img src="https://pngimg.com/uploads/paper_sheet/paper_sheet_PNG7250.png" alt="Papel" width="100">
+                Papel
+            </button>
+            <button onclick="jugar('tijera')">
+                <img src="https://pngimg.com/uploads/scissors/scissors_PNG16.png" alt="Tijera" width="100">
+                Tijera
+            </button>
+        </div>
+        <button id="jugar-otra-vez" onclick="reiniciarJuego()" style="display: none;">Jugar Otra Vez</button>
     <script src="juegoenjs.js"></script>
+
+
 </body>
 </html>
