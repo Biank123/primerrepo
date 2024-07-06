@@ -7,9 +7,9 @@
 // 2 empata con la computadora, si pasa 3 casi gana, si gana 1 pierde por bastante y si tiene 0, gana la computadora.
 
 // Definición de variables globales
-let board = []; // Array para mantener el estado actual de las casillas
-let flippedTiles = []; // Array para mantener las casillas volteadas por el usuario
-let pairsFound = 0; // Contador de pares encontrados por el usuario
+let tablero = []; // Array para mantener el estado actual de las casillas
+let casillasVolteadas = []; // Array para mantener las casillas volteadas por el usuario
+let parEncontrado = 0; // Contador de pares encontrados por el usuario
 let round = 1; // Contador de rondas jugadas
 
 function startGame(){

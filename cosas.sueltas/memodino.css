@@ -1,0 +1,90 @@
+body{
+    background: linear-gradient(145deg, rgb(9, 13, 0), rgb(30, 53, 3));
+}
+
+h1{
+    display: flex;
+    color: rgb(184, 21, 21);
+    -webkit-text-stroke: 0.1px yellow;
+    justify-content: center;
+    margin-top: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+
+}
+h3{
+    display: flex;
+    color: rgb(234, 234, 100);
+    justify-content: center;
+}
+.dinosaurios{
+    display: flex;
+    background-color: rgb(239, 209, 119);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border: 5px solid #0f0000;
+    border-radius: 50px;
+    justify-content: center;
+    padding: 40px;
+    width:fit-content;
+    margin-left: 250px;
+}
+
+.primer-div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.segundo-div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.tercer-div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.cuarto-div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.quinto-div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.sexto-div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.boton {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-left: 300px; 
+    padding: 10px; /
+}
+
+.boton button {
+    background: linear-gradient(145deg, rgb(77, 13, 2), rgb(247, 39, 36));
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    font-size: 16px;
+}
+.tiempo{
+    display: flex;
+    justify-content: right;
+    margin-right: 200px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+.resultados{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

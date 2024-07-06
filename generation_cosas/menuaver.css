@@ -4,22 +4,30 @@ html {
 
 body {
     background-image: url("https://images.hdqwalls.com/download/cgi-rendeer-purple-4k-8r-1366x768.jpg");
-    background-size: 100%;
+    background-size: cover;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-
 }
 
 .main {
     background-image: url("https://images.squarespace-cdn.com/content/v1/5bfc3e884cde7a5d18b39ad9/1644624947911-13DCD8KG0CVPW1ZVAH9G/63243aacfe563f25e472f9e187723df1.gif?format=2500w");
     padding: 10px 0;
 }
-
+.menu {
+    position: fixed; /* Fija el menú en la ventana del navegador */
+    top: 0; /* Asegura que esté fijo en la parte superior */
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+    background-color: rgba(0, 0, 0, 0.8); /* Color de fondo para el menú */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: top 0.3s ease-in-out; /* Transición suave al cambiar la posición */
+    margin-top: 0;
+}
 .menu ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    padding: 0;
 }
 
 .menu ul li {
@@ -33,7 +41,7 @@ body {
 }
 
 .menu ul li a:hover {
-    background: #560b5a;
+    background-color: #560b5a;
 }
 
 .section {
@@ -41,8 +49,8 @@ body {
     padding: 20px;
     text-align: left;
     margin: 50px;
-    margin-top: 200px;
-    margin-left: 150px;
+    margin-top: 200px; /* Ajuste según sea necesario */
+    margin-left: 150px; /* Ajuste según sea necesario */
 }
 
 .letra-grande {
@@ -52,7 +60,7 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent; /* Corregido: Eliminado prefijo '-webkit-' redundante */
 }
 
 section {
@@ -64,15 +72,17 @@ section {
 .section img {
     border-radius: 50%;
     margin-bottom: 40px;
-    margin-top: -200px;
-    margin-left: 700px;
+    margin-top: -200px; /* Ajuste según sea necesario */
+    margin-left: 700px; /* Ajuste según sea necesario */
 }
 
 #section1 {
     background: linear-gradient(145deg, rgb(0, 0, 0), rgb(74, 19, 93));
 }
 
-#section2 {
+#section2,
+#section4,
+#section5 {
     background-image: url("https://images.squarespace-cdn.com/content/v1/5bfc3e884cde7a5d18b39ad9/1644624947911-13DCD8KG0CVPW1ZVAH9G/63243aacfe563f25e472f9e187723df1.gif?format=2500w");
     background-size: cover;
 }
@@ -83,35 +93,27 @@ section {
 
 #section0 {
     background: linear-gradient(145deg, rgb(0, 0, 0), rgb(21, 3, 27));
-    
 }
+
 #section0 .contact-info {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 #section0 i {
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 
 #section0 p {
-    margin: 5px; 
-}
-#section4 {
-    background-image: url("https://images.squarespace-cdn.com/content/v1/5bfc3e884cde7a5d18b39ad9/1644624947911-13DCD8KG0CVPW1ZVAH9G/63243aacfe563f25e472f9e187723df1.gif?format=2500w");
-    background-size: cover;
-}
-#section5 {
-    background-image: url("https://images.squarespace-cdn.com/content/v1/5bfc3e884cde7a5d18b39ad9/1644624947911-13DCD8KG0CVPW1ZVAH9G/63243aacfe563f25e472f9e187723df1.gif?format=2500w");
-    background-size: cover;
+    margin: 5px;
 }
 
 .linkedin,
 .github {
     display: flex;
     align-items: center;
-    margin-left: 100px;
+    margin-left: 100px; /* Ajuste según sea necesario */
 }
 
 .linkedin a,
@@ -128,23 +130,30 @@ section {
     color: antiquewhite;
 }
 
-.section a {
-    color: rgb(169, 169, 178);
-    list-style: none;
-}
-
-.github {
-    margin-top: -63px;
-    margin-left: 250px;
-}
-.linkedin {
-    margin-top: -30px;
-}
-
-.bootcamp {
-    margin-top: 50px;
-}
-
+.bootcamp,
 .idiomas {
-    margin-top: 50px;
+    margin-top: 50px; 
+}
+
+.gallery-container {
+    display: flex;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.gallery {
+    display: flex;
+}
+
+.gallery-item img {
+    width: 100%; /* Ajuste para ocupar todo el espacio disponible */
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.2); /* Zoom al hacer hover */
+    cursor: pointer; /* Cambia el cursor a pointer */
 }

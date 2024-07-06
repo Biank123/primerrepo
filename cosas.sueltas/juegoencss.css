@@ -4,7 +4,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #030e3f;
+    background-image: url("https://media1.tenor.com/m/K_2KCrzfErcAAAAC/pattern-moving.gif");
+    background-size: cover;
     font-family: Arial, sans-serif;
 }
 
@@ -12,21 +13,44 @@ body {
     text-align: center;
     padding: 20px;
     background-color: rgb(40, 190, 190);
-    border: 5px solid #0f0000;
-    box-shadow: 5 5 10px rgba(0, 0, 0, 0.1);
+    border: 5px solid #0f0000; /* que tenga un borde negro el contenedor principal*/
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
-
+    width: 600px; /* fijar el ancho del contenedor para evitar que cambie de tamaño */
 }
 
 button {
     padding: 10px 20px;
     margin: 10px;
     font-size: 16px;
-    cursor: pointer;
+    cursor: pointer; /* el cursos cambia a manito al estar encima del botón*/
 }
 
 #resultados {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result-container {
+    background-color: #a549b7;
+    border: 3px solid #0f0000; /* que tenga un borde negro el contenedor de resultados */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left; /* alinear el texto más a la izquierda */
+}
+
+#manos-resultados {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+#texto-resultados {
+    text-align: center;
 }
 
 #elecciones button {
@@ -34,6 +58,7 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
+    text-align: center; /* centrar el contenido del botón */
 }
 
 #elecciones button:hover {
@@ -48,7 +73,7 @@ button {
 }
 
 #jugar-otra-vez:hover {
-    background-color: #9e16b9;
+    background-color: #9e16b9; /*al poner encima el mouse, cambia de color*/
 }
 
 #elecciones {
@@ -58,7 +83,10 @@ button {
 }
 
 #elecciones button img {
-    width: 80px; /* Ajusta el tamaño de la imagen */
-    height: 80px; /* Ajusta el tamaño de la imagen */
-    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+    display: block;
+    margin: 0 auto; /* centrar la imagen dentro del botón */
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
 }
+
