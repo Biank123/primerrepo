@@ -1,45 +1,131 @@
-// el pc esconde la imagen de unos dinosaurios en unas casillas al azar cada uno 
-// y las muestra todas por 2 segundos (supongamos que hay 20 casillas en total y 
-// todos son pares de diferentes dinosaurios), luego el usuario debe recordar dónde 
-// estaban y seleccionar los pares. Para esto tiene 30 segundos, equivocarse hace que 
-// la pantalla se vuelva roja por un segundo, para pasar debe haber seleccionado al menos 
-// 3 pares de dinosaurios. Se juegan 4 rondas y si el usuario las pasa todas gana, si pasa 
-// 2 empata con la computadora, si pasa 3 casi gana, si gana 1 pierde por bastante y si tiene 0, gana la computadora.
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('backgroundMusic');
+    const MusicButton = document.getElementById('pararmusica');
 
-// Definición de variables globales
-let tablero = []; // Array para mantener el estado actual de las casillas
-let casillasVolteadas = []; // Array para mantener las casillas volteadas por el usuario
-let parEncontrado = 0; // Contador de pares encontrados por el usuario
-let round = 1; // Contador de rondas jugadas
+    // Función para reproducir la música
+    function reproducirMusica() {
+        audio.play();
+        MusicButton.textContent = 'Parar Sonido';
+    }
 
-function startGame(){
-// Lógica para generar las casillas y colocar imágenes de dinosaurios al azar
-    // Mostrar imágenes por 2 segundos
-    setTimeout(hideTiles, 2000);
-}
-function hideTiles(){
-// Lógica para ocultar las imágenes
-}
-function clickTile(){
- // Lógica para voltear una casilla y verificar si se ha encontrado un par
-}
-function checkPairs(){
-// Lógica para verificar si los dos últimos tiles volteados forman un par
-    // Si es correcto, incrementar pairsFound y mostrar mensaje o continuar con el juego
-    // Si es incorrecto, mostrar la pantalla en rojo por un segundo
-}
-function updateTimer(){
-// Lógica para actualizar el temporizador de 30 segundos
-}
-function endRound(){
-    // Lógica para determinar el resultado de la ronda según el número de pares encontrados
-    // Actualizar round y reiniciar el juego para la siguiente ronda si no es la última
-}
-function endGame(){
-// Lógica para determinar el resultado final después de las 4 rondas
-}
-// Event listener para iniciar el juego al cargar la página
-document.addEventListener('DOMContentLoaded', startGame);
+    // Función para detener la música
+    function detenerMusica() {
+        audio.pause();
+        MusicButton.textContent = 'Reproducir Sonido';
+    }
 
-// Añadir API con login de usuario con google, facebook o jugar anónimamente
-// Añadir links a mi linkedin y github
+    // Alternar la reproducción de la música
+    MusicButton.addEventListener('click', function() {
+        if (audio.paused) {
+            reproducirMusica();
+        } else {
+            detenerMusica();
+        }
+    });
+
+    // Verificar el estado inicial de la música y actualizar el texto del botón
+    if (audio.paused) {
+        MusicButton.textContent = 'Reproducir Sonido';
+    } else {
+        MusicButton.textContent = 'Parar Sonido';
+    }
+
+    // Iniciar la música automáticamente cuando la página se carga
+    reproducirMusica();
+});
+
+// _____________________________________________________________________________________
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tiempoInicial = 30; // Tiempo inicial en segundos
+    let tiempoRestant = tiempoInicial;
+    const contadorElemento = document.getElementById('tiempo');
+    let intervalo;
+    const cancelButton = document.getElementById('cancelbutton');
+    
+    function actualizarContador() {
+        const minutos = Math.floor(tiempoRestante / 60);
+        const segundos = tiempoRestante % 60;
+        const formatoSegundos = segundos < 10 ? `0${segundos}` : segundos;
+        contadorElemento.textContent = `Tiempo: ${minutos}:${formatoSegundos}`;
+    }
+
+    function iniciarContador() {
+        actualizarContador();
+        intervalo = setInterval(function() {
+            tiempoRestante--;
+            if (tiempoRestante < 0) {
+                clearInterval(intervalo);
+                contadorElemento.textContent = '¡Tiempo agotado!';
+            } else {
+                actualizarContador();
+            }
+        }, 1000); // Actualiza cada segundo (1000 milisegundos)
+    }
+
+    playButton.addEventListener('click', function() {
+        if (intervalo) clearInterval(intervalo); // Reinicia el intervalo si ya está corriendo
+        tiempoRestante = tiempoInicial; // Reinicia el tiempo a 30 segundos
+        iniciarContador(); // Inicia el contador al hacer clic en el botón
+    });
+
+    cancelButton.addEventListener('click', function() {
+        if (intervalo) clearInterval(intervalo); // Detiene el intervalo
+        tiempoRestante = tiempoInicial; // Reinicia el tiempo a 30 segundos
+        actualizarContador(); // Actualiza el contador para mostrar 00:30
+    });
+
+    // Aquí llamamos a la función para iniciar la música automáticamente cuando la página se carga
+    reproducirMusica();
+});
+
+// _____________________________________________________________________________________
+
+document.addEventListener('DOMContentLoaded', function() {
+    const casillas = document.querySelectorAll('.casilla img');
+    let firstCard = null;
+    let secondCard = null;
+    let lockBoard = false;
+
+    casillas.forEach(casilla => {
+        casilla.addEventListener('click', function() {
+            if (lockBoard || casilla === firstCard) return;
+
+            const originalSrc = casilla.getAttribute('data-original');
+            casilla.setAttribute('src', originalSrc);
+
+            if (!firstCard) {
+                firstCard = casilla;
+                return;
+            }
+
+            secondCard = casilla;
+            lockBoard = true;
+
+            if (firstCard.getAttribute('data-original') === secondCard.getAttribute('data-original')) {
+                resetBoard();
+            } else {
+                setTimeout(() => {
+                    firstCard.setAttribute('src', 'placeholder.jpg');
+                    secondCard.setAttribute('src', 'placeholder.jpg');
+                    resetBoard();
+                }, 2000);
+            }
+        });
+    });
+
+    function resetBoard() {
+        [firstCard, secondCard, lockBoard] = [null, null, false];
+    }
+});
+     
+// Lógica del juego: 
+// Se hace click en el botón de inicio, se ejecuta la función de inicio.
+// La función de inicio, mezcla aleatoriamente las imágenes y comienza el conteo regresivo del tiempo.
+// También se comprueba en cada imágen seleccionada si se encuentra o no el par.
+// Si se encuentra su par y es el último par del juego, los resultados se actualizan a "¡TE SALVASTE!";
+// Si no se encuentran todos los pares antes de 30 segundos, los resultados se actualizan a "¡EXTINTO!";
+// Una vez apretado el inicio, su texto cambia a "REINICIAR", lo que restaura el tiempo a 30 seg. y mezcla de nuevo las img.
+// Las imágenes están ocultas al cargar la página y sólo se muestran al hacerles click, por 2 segundos.
+// Si al hacerle click a la imagen hay otra mostrándose y es el par, quedan mostrándose ambas.
+// Al perder, todas las imágenes se muestran hasta que el jugador dé click a REINICIAR.

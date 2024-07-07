@@ -3,94 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="memodino.css"></link>
+    <link rel="stylesheet" href="memodino.css">
+    <link rel="icon" href="huelladino.png.png">
+    </link>
     <title>¡Juguemos!</title>
 </head>
+
 <body>
     <h1>MEMODINO</h1>
-    <h3>Memoriza las posiciones y encuentra todos los pares antes de 30 segundos. ¡Buena suerte!</h3>
+    <h3>Memoriza las posiciones y encuentra todos los pares antes de 30 segundos. ¡Sálvate de la extinción!</h3>
     <div class="boton">
-        <button>INICIO</button>
-        </div>
-    <div class="tiempo">Tiempo: 00:30</div>
+        <button id="playButton">INICIO</button>
+        <button id="cancelbutton">CANCELAR</button>
+        <button id="pararmusica">Reproducir Sonido</button>
+    </div>
+    <img id="meteorito" src="https://static.vecteezy.com/system/resources/previews/023/271/181/non_2x/meteorite-illustrations-free-png.png" width="100">
+    <div id="tiempo">Tiempo: 00:30</div>
     <div class="dinosaurios">
         <div class="primer-div">
             <div class="casilla">
-                <img src="braquisaurio.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="braquisaurio.jpg" alt="Braquisaurio" width="100">
             </div>
 
             <div class="casilla">
-                <img src="cafalosaurio.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="cafalosaurio.jpg" alt="Cafalosaurio" width="100">
             </div>
             <div class="casilla">
-                <img src="diplodocus.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="diplodocus.jpg" alt="Diplodocus" width="100">
             </div>
         </div>
 
         <div class="segundo-div">
             <div class="casilla">
-                <img src="estegosaurio.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="estegosaurio.jpg" alt="Estegosaurio" width="100">
             </div>
             <div class="casilla">
-                <img src="plesiosaurio.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="plesiosaurio.jpg" alt="Plesiosaurio" width="100">
             </div>
             <div class="casilla">
-                <img src="pterodactilo.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="pterodactilo.jpg" alt="Pterodactilo" width="100">
             </div>
         </div>
 
         <div class="tercer-div">
             <div class="casilla">
-                <img src="tiranosaurio.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="tiranosaurio.jpg" alt="Tiranosaurio" width="100">
             </div>
             <div class="casilla">
-                <img src="triceratops.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="triceratops.jpg" alt="Triceratops" width="100">
             </div>
             <div class="casilla">
-                <img src="velociraptor.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="velociraptor.jpg" alt="Velociraptor" width="100">
             </div>
         </div>
 
         <div class="cuarto-div">
             <div class="casilla">
-                <img src="estegosaurio.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="estegosaurio.jpg" alt="Estegosaurio" width="100">
             </div>
             <div class="casilla">
-                <img src="pterodactilo.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="pterodactilo.jpg" alt="Pterodactilo" width="100">
             </div>
             <div class="casilla">
-                <img src="plesiosaurio.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="plesiosaurio.jpg" alt="Plesiosaurio" width="100">
             </div>
         </div>
 
         <div class="quinto-div">
             <div class="casilla">
-                <img src="cafalosaurio.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="cafalosaurio.jpg" alt="Cafalosaurio" width="100">
             </div>
             <div class="casilla">
-                <img src="braquisaurio.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="braquisaurio.jpg" alt="Braquisaurio" width="100">
             </div>
             <div class="casilla">
-                <img src="diplodocus.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="diplodocus.jpg" alt="Diplodocus" width="100">
             </div>
         </div>
 
         <div class="sexto-div">
             <div class="casilla">
-                <img src="tiranosaurio.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="tiranosaurio.jpg" alt="Tiranosaurio" width="100">
             </div>
             <div class="casilla">
-                <img src="triceratops.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="triceratops.jpg" alt="Triceratops" width="100">
             </div>
             <div class="casilla">
-                <img src="velociraptor.jpg" alt="Braquisaurio" width="100">
+                <img src="casillagiradadino.jpg" data-original="velociraptor.jpg" alt="Velociraptor" width="100">
             </div>
+        </div>
     </div>
 
-    </div>
-    <div class="resultados">
-        RESULTADOS
-    </div>
+    <img id="meteorito2" src="https://static.vecteezy.com/system/resources/previews/023/271/181/non_2x/meteorite-illustrations-free-png.png" width="100">
+    <div class="resultados">RESULTADOS</div>
+    <audio id="backgroundMusic" loop>
+        <source src="musica.prehistorica.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
     <script src="memodino.js"></script>
 </body>
 </html>
