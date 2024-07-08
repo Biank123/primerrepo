@@ -11,14 +11,14 @@
 
 <body>
     <h1>MEMODINO</h1>
-    <h3>Memoriza las posiciones y encuentra todos los pares antes de 30 segundos. ¡Sálvate de la extinción!</h3>
+    <h3>Encuentra todos los pares antes de agotar el tiempo. ¡Sálvate de la extinción!</h3>
     <div class="boton">
         <button id="playButton">INICIO</button>
         <button id="cancelbutton">CANCELAR</button>
         <button id="pararmusica">Reproducir Sonido</button>
     </div>
     <img id="meteorito" src="https://static.vecteezy.com/system/resources/previews/023/271/181/non_2x/meteorite-illustrations-free-png.png" width="100">
-    <div id="tiempo">Tiempo: 00:30</div>
+    <div id="tiempo">Tiempo: 01:00</div>
     <div class="dinosaurios">
         <div class="primer-div">
             <div class="casilla">
@@ -95,9 +95,11 @@
     </div>
 
     <img id="meteorito2" src="https://static.vecteezy.com/system/resources/previews/023/271/181/non_2x/meteorite-illustrations-free-png.png" width="100">
-    <div class="resultados">RESULTADOS</div>
+    <div class="resultados">
+        <h2 id="texto">RESULTADOS: </h2>
+    </div>
     <audio id="backgroundMusic" loop>
-        <source src="musica.prehistorica.mp3" type="audio/mp3">
+        <source src="musicamemodino.mp3" type="audio/mp3">
         Tu navegador no soporta el elemento de audio.
     </audio>
     <script src="memodino.js"></script>
