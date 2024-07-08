@@ -55,9 +55,7 @@ h3 {
     width: 100px;
     height: 100px;
     margin: 10px;
-    perspective: 1000px; /* Perspectiva para la animación 3D */
     cursor: pointer;
-    position: relative; /* Asegura que la transformación 3D funcione correctamente */
 }
 
 .primer-div,
@@ -79,11 +77,11 @@ h3 {
     padding: 10px;
 }
 #pararmusica{
-    margin-top: -273px;
-    margin-right: 100px;
+    
+    margin-right: 250px;
 }
 #cancelbutton{
-    margin-left: 460px;
+    margin-left: 350px;
 }
 .boton button {
     background: linear-gradient(145deg, rgb(77, 13, 2), rgb(247, 39, 36));
