@@ -20,8 +20,8 @@ h1 {
     color: rgb(184, 21, 21);
     -webkit-text-stroke: 0.1px yellow;
     justify-content: center;
-    margin-top: 40px;
-    margin-left: 90px;
+    margin-top: 70px;
+    margin-left: 85px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 80px;
 }
@@ -43,7 +43,7 @@ h3 {
     padding: 40px;
     width: fit-content;
     margin-left: 300px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .casilla img:hover {
@@ -122,6 +122,6 @@ h3 {
 .resultados{
     color: rgb(240, 213, 7);
     margin-top: -700px;
-    margin-left: 100px;
+    margin-left: 80px;
     -webkit-text-stroke: 0.1px rgb(255, 0, 0);
 }

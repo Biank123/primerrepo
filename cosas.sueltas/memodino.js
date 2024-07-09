@@ -1,3 +1,16 @@
+// MEMODINO: juego de memoria con dinosaurios.
+// Lógica del juego:
+// Se hace click en el botón de inicio, se ejecuta la función de inicio.
+// La función de inicio, mezcla aleatoriamente las imágenes y comienza el conteo regresivo del tiempo.
+// También se comprueba en cada imágen seleccionada si se encuentra o no el par.
+// Si se encuentra su par y es el último par del juego, los resultados se actualizan a "¡TE SALVASTE!" y se detiene el tiempo;
+// Si no se encuentran todos los pares antes de 60 segundos, los resultados se actualizan a "¡EXTINTO!" y el tiempo a agotado;
+// Las imágenes están ocultas al cargar la página y sólo se muestran al dar a INICIO y hacerles click, por 500 milisegundos.
+// Si al hacerle click a la imagen hay otra mostrándose y es el par, quedan mostrándose ambas.
+// Al perder, se bloquean las casillas mostrando solo los pares encontrados, hasta que el jugador dé click a INICIAR nuevamente.
+// Al dar click a CANCELAR, se detiene el conteo y se bloquean las casillas.
+// Se puede detener la música de fondo al clickear PARAR SONIDO, y volver a ponerla con REPRODUCIR SONIDO.
+
 document.addEventListener('DOMContentLoaded', function () {
     // Obtener elementos del DOM
     const audio = document.getElementById('backgroundMusic'); // Obtiene el elemento de audio
@@ -46,15 +59,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 resultadoTexto.textContent = 'RESULTADOS: ¡TE SALVASTE!'; // Muestra el mensaje de ¡Te salvaste!
                 break;
             case 'fin-malo':
-                resetBoard();
                 resultadoTexto.textContent = 'RESULTADOS: ¡EXTINTO!'; // Muestra el mensaje de ¡Extinto!
+                lockBoard = true;
                 break;
             case 'jugando':
                 resultadoTexto.textContent = 'RESULTADOS: ...'; // Muestra puntos suspensivos mientras se está jugando
                 break;
         }
     }
-
+    
     // Función para determinar el estado del juego y actualizar el texto del resultado
     function determinarGanador() {
         const todasMostrandoDinosaurios = Array.from(casillas).every(casilla => {
@@ -114,14 +127,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const minutos = Math.floor(tiempoRestante / 60); // Calcula los minutos restantes
         const segundos = tiempoRestante % 60; // Calcula los segundos restantes
         const formatoSegundos = segundos < 10 ? `0${segundos}` : segundos; // Formatea los segundos para que siempre tengan dos dígitos
-        contadorElemento.textContent = `Tiempo: ${minutos}:${formatoSegundos}`; // Actualiza el texto del elemento del contador
+        contadorElemento.textContent = `Tiempo: 0${minutos}:${formatoSegundos}`; // Actualiza el texto del elemento del contador
     }
 
     // Función para iniciar el contador de tiempo
     function iniciarContador() {
         actualizarContador(); // Llama a la función para actualizar el contador
         intervalo = setInterval(function () {
-            tiempoRestante--; // Decrementa el tiempo restante
+            tiempoRestante--; // Cuenta regresiva, decremento del tiempo restante
             if (tiempoRestante < 0) {
                 clearInterval(intervalo); // Detiene el intervalo si el tiempo se agota
                 tiempoRestante = 0; // Asegura que el tiempo no sea negativo
@@ -164,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const dinosaurImages = Array.from(casillas).map(casilla => casilla.getAttribute('data-original'));
 
     // Función para mezclar el array de imágenes
-    function shuffle(array) {
+    function mezclar(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]]; // Intercambia elementos aleatoriamente
@@ -178,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Función para inicializar el tablero con las imágenes de dinosaurios
     function initializeBoard() {
-        shuffle(dinosaurImages); // Mezcla las imágenes de dinosaurios
+        mezclar(dinosaurImages); // Mezcla las imágenes de dinosaurios
         casillas.forEach((casilla, index) => {
             casilla.setAttribute('data-original', dinosaurImages[index]); // Asigna las imágenes mezcladas a las casillas
             casilla.setAttribute('src', 'casillagiradadino.jpg'); // Establece la imagen de fondo para todas las casillas
@@ -243,13 +256,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// Lógica del juego:
-// Se hace click en el botón de inicio, se ejecuta la función de inicio.
-// La función de inicio, mezcla aleatoriamente las imágenes y comienza el conteo regresivo del tiempo.
-// También se comprueba en cada imágen seleccionada si se encuentra o no el par.
-// Si se encuentra su par y es el último par del juego, los resultados se actualizan a "¡TE SALVASTE!";
-// Si no se encuentran todos los pares antes de 30 segundos, los resultados se actualizan a "¡EXTINTO!";
-// Una vez apretado el inicio, su texto cambia a "REINICIAR", lo que restaura el tiempo a 30 seg. y mezcla de nuevo las img.
-// Las imágenes están ocultas al cargar la página y sólo se muestran al hacerles click, por 2 segundos.
-// Si al hacerle click a la imagen hay otra mostrándose y es el par, quedan mostrándose ambas.
-// Al perder, todas las imágenes se muestran hasta que el jugador dé click a INICIAR nuevamente

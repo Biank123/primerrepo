@@ -68,7 +68,7 @@ section {
     color: rgb(169, 169, 178);
 }
 
-.section img {
+#section5 img {
     border-radius: 50%;
     margin-bottom: 40px;
     margin-top: -200px; 
@@ -80,14 +80,9 @@ section {
 }
 
 #section2,
-#section4,
 #section5 {
     background-image: url("https://images.squarespace-cdn.com/content/v1/5bfc3e884cde7a5d18b39ad9/1644624947911-13DCD8KG0CVPW1ZVAH9G/63243aacfe563f25e472f9e187723df1.gif?format=2500w");
     background-size: cover;
-}
-
-#section3 {
-    background: linear-gradient(145deg, rgb(0, 0, 0), rgb(74, 19, 93));
 }
 
 #section0 {
@@ -129,10 +124,6 @@ section {
     color: antiquewhite;
 }
 
-.bootcamp,
-.idiomas {
-    margin-top: 50px; 
-}
 
 .gallery-container {
     display: flex;
