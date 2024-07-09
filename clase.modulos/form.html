@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formularioo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Formulario</title>
+<style>
+    body {
+    background-color: rgb(249, 248, 238);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    margin-left: 200px;
+    margin-right: 250px;
+}
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
+    margin: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    background-color: rgb(230, 187, 88);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+.titulo h2 {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin-left: 10px;
+}
+.secciones {
+    margin: 50px;
+    margin-top: -5px;
+}
+.primeras-secciones {
+    display:flex;
+    justify-content: space-between;
+    margin-left: 150px;
+}
+.segundas-secciones {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    align-self: flex-start;
+    margin-left: 150px;
+}
+.nombre {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 35px;
+}
+.apellido{
+    margin-top: 16px;
+}
+.terceras-secciones {
+    display: flex;
+    flex-direction: column;
+    width: 26%;
+    margin-left: auto;
+    margin-top: -220px;
+    margin-right: 140px;
+}
+.lugar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.postal {
+    margin-left: 10px;
+    margin-top: 18px;
+}
+.region {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.ciudad {
+    display:flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.cancel-send {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 550px;
+    margin-bottom: -20px;
+}
+.send-button {
+    background-color: rgb(152, 199, 232);
+    margin-top: 20px;
+}
+.cancel-button {
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+.parrafito{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-left: 20px;
+}
+.payment-methods {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-left: -13px;
+}   
+.pagos {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: rgb(211, 208, 202);
+    margin-top: 15px; 
+    padding: auto;
+    height: 90px;
+    width: 160px;
+
+}
+</style>
+    
+</head>
+<body>
+    <div class="caja-de-formulario">
+        <div class="titulo">
+            <i class="fa-solid fa-pager"></i>
+            <h2>Formulario de pago</h2>
+        </div>
+        <form id="registroForm">
+            <div class="secciones">
+                <div class="primeras-secciones">
+                    <label for="tarjeta">Número de tarjeta #</label>
+                    <input type="text" id="tarjeta" name="tarjeta" placeholder="XXXX-XXXX-XXXX-XXXX" required maxlength="16">
+                    
+                    <label for="cvc">Fecha #</label>
+                    <input type="text" id="cvc" name="cvc" placeholder="0000" required maxlength="4" size="4">
+                    
+                    <label for="monto">Monto $</label>
+                    <input type="text" id="monto" name="monto" placeholder="00000" required size="15">
+                </div>
+
+                <div class="segundas-secciones">
+                    <div class="nombre">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="ciudad">
+                        <label for="city">Ciudad:</label>
+                        <select id="city" name="city">
+                            <option value="Santiago">Santiago</option>
+                            <option value="Concepcion">Concepción</option>
+                            <option value="Talca">Talca</option>
+                            <option value="Viña del Mar">Viña del Mar</option>
+                            <option value="Valparaiso">Valparaíso</option>
+                            <option value="La Serena">La Serena</option>
+                            <option value="Iquique">Iquique</option>
+                        </select>
+                    </div>
+                    <div class="pagos">
+                        <label for="payment-method"><b>Método de pago:</b></label>
+                        <div class="payment-methods" required>
+                            <input type="radio" id="visa" name="payment-method" value="visa">
+                            <label for="visa"><i class="fa-brands fa-cc-visa"></i></label>
+                            <input type="radio" id="mastercard" name="payment-method" value="mastercard">
+                            <label for="mastercard"><i class="fa-brands fa-cc-mastercard"></i></label>
+                            <input type="radio" id="dinners-club" name="payment-method" value="dinners-club">
+                            <label for="dinners-club"><i class="fa-brands fa-cc-diners-club"></i></label>
+                            <input type="radio" id="amazon-pay" name="payment-method" value="amazon-pay">
+                            <label for="amazon-pay"><i class="fa-brands fa-cc-amazon-pay"></i></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terceras-secciones">
+                    <div class="apellido">
+                        <label for="last-name">Apellido:</label>
+                        <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+                    </div>
+                    <div class="lugar">
+                        <div class="region">
+                            <label for="state">Región:</label>
+                            <select id="state" name="state">
+                                <option value="Metropolitana">Metropolitana</option>
+                                <option value="Antofagasta">Antofagasta</option>
+                                <option value="Los Lagos">Los Lagos</option>
+                                <option value="Coquimbo">Coquimbo</option>
+                                <option value="Bio Bio">Bío Bío</option>
+                            </select>
+                        </div>
+                        <div class="postal">
+                            <label for="postal">Código Postal:</label>
+                            <input type="text" id="postal" name="postal" maxlength="7" placeholder="0000000" size="4">
+                        </div>
+                    </div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Add any notes here" maxlength="40"></textarea>
+                </div>
+
+                <div class="cancel-send">
+                    <button type="button" class="cancel-button">Cancelar</button>
+                    <button type="submit" class="send-button">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

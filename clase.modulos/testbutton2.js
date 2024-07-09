@@ -21,13 +21,27 @@ document.getElementById("cambiar-color").addEventListener("click", function () {
     document.body.style.backgroundColor = colorRandom(); //Dentro de la función de clic, cambia la propiedad 
     //backgroundColor del elemento body al valor retornado por getRandomColor(), cambiando así el color de fondo del documento.
 })
-
+// ------------------------------------------------------------------------------
 const botonEnviar = document.getElementById("boton");
 const inputTexto = document.getElementById("textoInput");
+const inputEmail = document.getElementById("emailInput");
+const inputPassword = document.getElementById("passwordInput");
 
 botonEnviar.addEventListener("click", function () {
     const texto = inputTexto.value; // Obtener el valor del input: 
-    //.value obtiene el texto que el usuario ha escrito dentro del formulario.
+    //.value obtiene el texto que el usuario ha escrito dentro del formulario (el valor que hay dentro del input)
     console.log(texto); // Imprimir el valor en la consola
-    inputTexto.value = ''; // Establecer el valor del input a una cadena vacía, borrando el texto
+    inputTexto.value = ''; // Establecer el valor del input a una cadena vacía, borrando el texto 
+
+    botonEnviar.addEventListener("click", function () {
+        const email = inputEmail.value;
+        console.log(email);
+        inputEmail.value = '';
+
+        botonEnviar.addEventListener("click", function () {
+            const password = inputPassword.value;
+            console.log(password);
+            inputPassword.value = '';
+        });
+    });
 });

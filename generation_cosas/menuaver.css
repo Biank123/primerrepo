@@ -60,7 +60,6 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent; /* Corregido: Eliminado prefijo '-webkit-' redundante */
 }
 
 section {
@@ -72,8 +71,8 @@ section {
 .section img {
     border-radius: 50%;
     margin-bottom: 40px;
-    margin-top: -200px; /* Ajuste según sea necesario */
-    margin-left: 700px; /* Ajuste según sea necesario */
+    margin-top: -200px; 
+    margin-left: 700px; 
 }
 
 #section1 {
@@ -113,7 +112,7 @@ section {
 .github {
     display: flex;
     align-items: center;
-    margin-left: 100px; /* Ajuste según sea necesario */
+    margin-left: 100px;
 }
 
 .linkedin a,
@@ -145,15 +144,21 @@ section {
 
 .gallery {
     display: flex;
+    gap: 10px;
 }
 
 .gallery-item img {
-    width: 100%; /* Ajuste para ocupar todo el espacio disponible */
-    display: block;
+    display: grid;
+    width: 100%;
     transition: transform 0.3s ease-in-out;
 }
 
 .gallery-item img:hover {
-    transform: scale(1.2); /* Zoom al hacer hover */
-    cursor: pointer; /* Cambia el cursor a pointer */
+    transform: scale(1.2); 
+    cursor: pointer; 
+}
+.description{
+    display: grid;
+    
+    
 }

@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <button id="mi-boton">Hacer click aquí</button>
     <button id="cambiar-color">Cambiar color del fondo</button>
-    <input type="text" id="textoInput" placeholder="Escribe algo aquí">
-    <button id="boton">Enviar</button>
+    
+    <!-- El elemento <label> en HTML se utiliza para definir una etiqueta para un elemento de formulario.  -->
+    <form>
+        <label for="textoInput">Nombre:</label>
+        <input type="text" id="textoInput" placeholder="Escribe tu nombre aquí" maxlength="20" required>
 
+        <label for="emailInput">Correo:</label>
+        <input type="email" id="emailInput" placeholder="Escribe tu correo aquí" required>
+
+        <label for="passwordInput">Contraseña:</label>
+        <input type="password" id="passwordInput" placeholder="Escribe tu contraseña aquí" maxlength="8" minlength="4" required>
+
+
+        <button id="boton" type="submit">Enviar</button>
+    </form>
     <script src="testbutton2.js"></script>
 </body>
+
 </html>
