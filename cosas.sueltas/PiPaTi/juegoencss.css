@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url("https://media1.tenor.com/m/K_2KCrzfErcAAAAC/pattern-moving.gif");
+    background-color: rgb(18, 18, 82);
     background-size: cover;
     font-family: Arial, sans-serif;
 }
