@@ -1,10 +1,15 @@
 // Jugar piedra, papel o tijera con la computadora:
 
 const manos = {
-    piedra: 'https://images.vexels.com/content/145874/preview/stone-boulder-2f1c5f.png',
-    papel: 'https://pngimg.com/uploads/paper_sheet/paper_sheet_PNG7250.png',
-    tijera: 'https://pngimg.com/uploads/scissors/scissors_PNG16.png'
+    piedra: 'piedra.webp',
+    papel: 'papel.png',
+    tijera: 'tijera.png'
 };
+
+const sonidoGanar = new Audio('win.mp3');
+const sonidoPerder = new Audio('lose.mp3');
+const sonidoClick = new Audio('click.mp3');
+const sonidoEmpate = new Audio('empate.mp3');
 
 function obtener_eleccion_pc() {
     const opciones = ['piedra', 'papel', 'tijera'];
@@ -25,6 +30,7 @@ function determinar_ganador(eleccion_usuario, eleccion_pc) {
 }
 
 function jugar(eleccion_usuario) {
+    sonidoClick.play();
     let eleccion_pc = obtener_eleccion_pc();
     let resultado = determinar_ganador(eleccion_usuario, eleccion_pc);
 
@@ -62,6 +68,15 @@ function jugar(eleccion_usuario) {
                 </div>
             </div>
         `;
+
+        if (resultado === "¡Ganaste!") {
+            sonidoGanar.play();  
+        } else if (resultado === "Perdiste.") {
+            sonidoPerder.play();  
+        } else if (resultado === "Empate") {
+            sonidoEmpate.play();  
+        }
+
         jugarOtraVezBtn.style.display = 'block';
     }, 2000); // el tiempo que tarda en mostrar resultados
 }

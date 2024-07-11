@@ -13,8 +13,8 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     // Obtener elementos del DOM
-    const audio = document.getElementById('backgroundMusic'); // Obtiene el elemento de audio
-    const MusicButton = document.getElementById('pararmusica'); // Obtiene el botón de control de música
+    const audio = document.getElementById('backgroundMusic'); // Obtiene el elemento de audio del html
+    const MusicButton = document.getElementById('pararmusica'); // Obtiene el botón de control de música del html
 
     // Función para reproducir la música
     function reproducirMusica() {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         audio.pause(); // Pausa la música
         MusicButton.textContent = 'Reproducir Sonido'; // Actualiza el texto del botón de música
     }
-
+// --------------------------------------------------------------------------------------------------------
     // Constante para el número total de pares de casillas
     const totalParesCasillas = 9;
 
@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return 'jugando'; // Retorna estado de jugando si el juego está en progreso
         }
     }
-
-    // Función para mostrar resultados según el estado del juego
+// --------------------------------------------------------------------------------------------------------
+    // Función para mostrar resultados según el estado del juego (NO CAMBIAR, AL FIN FUNCIONA)
     function mostrarResultado(estado) {
         let resultadoTexto = document.getElementById("texto"); // Obtiene el elemento donde se mostrará el resultado
         determinarGanador();
-        // Switch para determinar el texto del resultado según el estado
+        // Switch-case (como el if-else) para determinar el texto del resultado según el estado
         switch (estado) {
             case 'inicio':
                 resultadoTexto.textContent = 'RESULTADOS: ¡COMIENZA EL JUEGO!'; // Muestra el mensaje de inicio del juego
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 break;
         }
     }
-    
+// ---------------------------------------------------------------------------------------------------------
     // Función para determinar el estado del juego y actualizar el texto del resultado
     function determinarGanador() {
         const todasMostrandoDinosaurios = Array.from(casillas).every(casilla => {
@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
             mostrarResultado('fin-bueno'); // Muestra el resultado de fin bueno si todas las casillas muestran dinosaurios y el tiempo no se ha agotado
         }
     }
+// ----------------------------------------------------------------------------------------------------
     // Alternar la reproducción de la música
     MusicButton.addEventListener('click', function () {
         if (audio.paused) {
@@ -112,8 +113,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Iniciar la música automáticamente cuando la página se carga
-    reproducirMusica(); // Llama a la función para reproducir la música al cargar la página
-
+    reproducirMusica(); // Llama a la función para reproducir la música al cargar la páginaaaaaaaaaaaa
+// ----------------------------------------------------------------------------------------------------
     // Tiempo en cuenta regresiva
     const tiempoInicial = 60; // Tiempo inicial en segundos
     let tiempoRestante = tiempoInicial; // Tiempo restante inicializado al tiempo inicial
@@ -124,10 +125,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Función para actualizar el contador de tiempo en pantalla
     function actualizarContador() {
-        const minutos = Math.floor(tiempoRestante / 60); // Calcula los minutos restantes
+        const minutos = Math.floor(tiempoRestante / 60); // Calcula los minutos restantes (math.floor redondea a entero)
         const segundos = tiempoRestante % 60; // Calcula los segundos restantes
-        const formatoSegundos = segundos < 10 ? `0${segundos}` : segundos; // Formatea los segundos para que siempre tengan dos dígitos
-        contadorElemento.textContent = `Tiempo: 0${minutos}:${formatoSegundos}`; // Actualiza el texto del elemento del contador
+        const formatoSegundos = segundos < 10 ? `0${segundos}` : segundos; // Formatea los segundos para que siempre tengan dos dígitos 
+        // ? operador ternario, forma compacta de escribir una declaración if-else -> condición ? expresión1 : expresión2. 
+        // Si la condición es true, se ejecuta expresión1. Si la condición es false, se ejecuta expresión2.
+        contadorElemento.textContent = `Tiempo: 0${minutos}:${formatoSegundos}`; // Actualiza el texto del tiempo
     }
 
     // Función para iniciar el contador de tiempo
@@ -145,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }, 1000); // Actualiza cada segundo (1000 milisegundos)
     }
+// ---------------------------------------------------------------------------------------------------------------
 
     // Evento click para el botón de inicio
     playButton.addEventListener('click', function () {
@@ -165,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
         gameStarted = false; // Establece que el juego no ha comenzado
         mostrarResultado('inicio'); // Llama a la función para mostrar el resultado de estado inicio
     });
-
+// ----------------------------------------------------------------------------------------------------------------
     // Girar las casillas:
     const casillas = document.querySelectorAll('.casilla img'); // Obtiene todas las imágenes de las casillas
     let firstCard = null; // Variable para almacenar la primera carta seleccionada
@@ -197,8 +201,8 @@ document.addEventListener('DOMContentLoaded', function () {
             casilla.setAttribute('src', 'casillagiradadino.jpg'); // Establece la imagen de fondo para todas las casillas
         });
     }
-
-    // Evento click para el botón de inicio
+// -----------------------------------------------------------------------------------------------
+    // Evento click para el botón de inicio x2 con otra funcion
     playButton.addEventListener('click', function () {
         gameStarted = true; // Establece que el juego ha comenzado
         initializeBoard(); // Inicializa el tablero con las imágenes de dinosaurios
@@ -208,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mostrarResultado('jugando'); // Llama a la función para mostrar el resultado de estado jugando
     });
 
-    // Evento click para el botón de cancelar
+    // Evento click para el botón de cancelar x2 con otra funcion (por alguna razón solo así funcionaaaaaaa)
     cancelButton.addEventListener('click', function () {
         gameStarted = false; // Establece que el juego no ha comenzado
         initializeBoard(); // Inicializa el tablero con las imágenes de dinosaurios
@@ -248,8 +252,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-
-    // Inicializar el mensaje al cargar la página
+// ------------------------------------------------------------------------------------
+    // Inicializar el mensaje al cargar la página (NECESARIO PARA QUE FUNCIONE TODO AAAAAAAAAA)
     mostrarResultado('inicio'); // Llama a la función para mostrar el resultado de estado inicio
     verificarResultado(); // Llama a la función para verificar el resultado después de cada clic en una casilla
 });

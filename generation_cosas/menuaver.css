@@ -83,6 +83,7 @@ section {
 #section5 {
     background-image: url("https://images.squarespace-cdn.com/content/v1/5bfc3e884cde7a5d18b39ad9/1644624947911-13DCD8KG0CVPW1ZVAH9G/63243aacfe563f25e472f9e187723df1.gif?format=2500w");
     background-size: cover;
+    text-decoration: none;
 }
 
 #section0 {
@@ -131,6 +132,7 @@ section {
     max-width: 800px;
     margin: 0 auto;
     justify-content: space-between;
+    text-decoration: none;
 }
 
 .gallery {
@@ -150,6 +152,11 @@ section {
 }
 .description{
     display: grid;
-    
-    
+}
+.gallery-container a {
+    text-decoration: none; /* Quita la decoración del enlace */
+}
+.gallery-container a h5{
+    color: rgba(255, 255, 255, 0.637);
+    text-align: justify
 }
