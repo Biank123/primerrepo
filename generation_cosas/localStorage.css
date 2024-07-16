@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(225, 205, 179);
+    border: solid 1px;
+    height: 700px;
+    text-align: center;
+}
+
+label{
+    font-family: cursive;
+   
+}
+
+#button{
+    background-color: chocolate;
+    color: antiquewhite;
+    font-family: cursive;
+}
+#ingreso{
+
+    background-color: rgb(231, 231, 230);
+
+    
+}
+
+#lista{
+    background-color: darkkhaki;
+}

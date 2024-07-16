@@ -1,0 +1,13 @@
+@media (max-width: 576px){
+    body{
+        background-color: black;
+        font-family: fantasy;
+        color: antiquewhite;
+    }
+}
+@media (min-width: 576px){
+    body{
+        background-color: darkgreen;
+        font-family: monospace;
+    }
+}
